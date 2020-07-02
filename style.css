@@ -46,3 +46,11 @@ body {
     top: 20%;
     left: 50%;
 }
+
+#score {
+    position: absolute;
+    font-size: 0.7rem;
+    opacity: 30%;
+    left: 50%;
+    top: 0;
+}

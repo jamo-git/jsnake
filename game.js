@@ -1,5 +1,6 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from "./snake.js"
 import { update as updateFood, draw as drawFood } from "./food.js"
+import { draw as drawScore } from "./score.js"
 import { outsideGrid } from "./grid.js"
 
 let lastRenderTime = 0
@@ -14,7 +15,8 @@ function hideInstruction() {
 function main(currentTime) {
     if (gameOver) {
         if (confirm("You lost! Press OK to restart.")) {
-            window.location = "/jsnake"
+            // window.location = "/jsnake"
+            window.location = "/"
         }
         return
     }
@@ -45,6 +47,7 @@ function draw() {
     gameBoard.innerHTML = ""
     drawSnake(gameBoard)
     drawFood(gameBoard)
+    drawScore()
 }
 
 function checkDeath() {
