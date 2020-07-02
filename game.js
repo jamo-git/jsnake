@@ -5,20 +5,28 @@ import { outsideGrid } from "./grid.js"
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById("game-board")
+const overlayDiv = document.getElementById("overlay")
+
+function hideInstruction() {
+    overlayDiv.style.display = "none"
+}
 
 function main(currentTime) {
     if (gameOver) {
         if (confirm("You lost! Press OK to restart.")) {
-            window.location = "/"
+            window.location = "/jsnake"
         }
         return
     }
 
+    if (window.getComputedStyle(overlayDiv).display === 'block') {
+        setTimeout(hideInstruction, 5000)
+    }
 
     window.requestAnimationFrame(main)
     const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
     if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
-    
+
     lastRenderTime = currentTime
 
     update()
