@@ -1,6 +1,6 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from "./snake.js"
 import { update as updateFood, draw as drawFood } from "./food.js"
-import { draw as drawScore } from "./score.js"
+import { draw as drawScore, getScore } from "./score.js"
 import { outsideGrid } from "./grid.js"
 
 let lastRenderTime = 0
@@ -14,10 +14,8 @@ function hideInstruction() {
 
 function main(currentTime) {
     if (gameOver) {
-        if (confirm("You lost! Press OK to restart.")) {
-            // window.location = "/jsnake"
-            window.location = "/"
-        }
+        localStorage.setItem("scoreStore", getScore());
+        setTimeout(function () { window.location = "./submit.html" }, 1000)
         return
     }
 
