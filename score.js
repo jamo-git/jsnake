@@ -9,3 +9,7 @@ export function draw() {
     const drawScore = document.getElementById("score")
     drawScore.innerHTML = "Score: " + scoreCount
 }
+
+export function getScore() {
+    return scoreCount
+}
