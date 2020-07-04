@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake JS game</title>
+    <link rel="stylesheet" href="submit.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <script src="submit.js" defer></script>
+</head>
+
+<body>
+    <div class="submit">
+        <form action="#" onsubmit="postScore(this.user.value); return false" class="pure-form-aligned">
+            <p>If you would like save your score <span id="userscore"></span>, please enter a nickname:</p>
+            <input style="text-transform: uppercase;" pattern="^[a-zA-Z0-9]+$" type="text" name="user" id="user"
+                maxlength="6" placeholder="E.g. NICK" required>
+            <button type="submit" id="btnSubmit">Submit</button>
+        </form>
+    </div>
+    <table class="pure-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>User:</th>
+                <th>Playcounts:</th>
+                <th>Max score:</th>
+            </tr>
+        </thead>
+        <tbody id="scorentry">
+
+        </tbody>
+    </table>
+    <button type="submit" id="btnReturn">Return</button>
+</body>
+
+</html>
