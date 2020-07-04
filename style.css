@@ -29,15 +29,9 @@ body {
     border-radius: 40%;
 }
 
-#instruction {
-    position: fixed;
-    display: block;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 2;
-    top: 0;
-}
-
 #text {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 1rem;
     position: absolute;
     font-size: 2rem;
     color: grey;
